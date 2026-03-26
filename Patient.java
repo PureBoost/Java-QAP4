@@ -1,6 +1,4 @@
-// Drug (drugId,drugName,drugCost,dosage)
-
-public class Patient {
+    public class Patient {
     private int patientId;
     private String patientFirstName;
     private String patientLastName;
@@ -46,7 +44,10 @@ public class Patient {
     }
 
     public String toString() {
-        return "Patient ID: " + patientId + ", First Name: " + patientFirstName + ", Last Name: " + patientLastName + ", DOB: " + patientDOB;
+        String dobText = String.format("%08d", patientDOB);
+        String formattedDob = dobText.substring(0, 4) + "-" + dobText.substring(4, 6) + "-" + dobText.substring(6, 8);
+
+        return "Patient ID: " + patientId + ", First Name: " + patientFirstName + ", Last Name: " + patientLastName + ", DOB: " + formattedDob;
     }
 
 }
